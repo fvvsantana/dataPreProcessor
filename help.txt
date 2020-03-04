@@ -1,0 +1,46 @@
+Usage:
+	python3 dataProcessor.py --convert -i IFILE -o OFILE
+	python3 dataProcessor.py --calculate -i IFILE -o OFILE PARAMETER
+	python3 dataProcessor.py --summarize --nlines NLINES -i IFILE -o OFILE PARAMETERS
+
+Data Processor Script provides operations to work with xlsx and csv datasets, e.g. data calculation, data summarization and file conversion.
+
+
+Examples:
+	python3 dataProcessor.py --convert -i data.xlsx -o data.csv	# Convert data.xlsx to data.csv
+	python3 dataProcessor.py --calculate -i data.csv -o calculate.csv acceleration[1,2,3]	# Calculate Acceleration for each line of data.csv where [1,2,3] are the column numbers of the variables [ax,ay,az], which are used in the calculation
+	python3 dataProcessor.py --summarize --nlines 10 -i calculate.csv -o summarize.csv mean median 	# Calculate mean and median for every 10 lines of calculate.csv. In addition, each column, except the last, will result in 2 columns, one for the mean, other for the median. For example, if the calculate.csv file has this header: [Ax, Ay, Label], then the summarize.csv file will have this header: [Mean_Ax, Median_Ax, Mean_Ay, Median_Ay, Label]
+	python3 dataProcessor.py --select [0,2,3] -i data1.csv -o data2.csv	# Select the 1st, 3rd and 4th columns of data1.csv and put it on data2.csv
+	python3 dataProcessor.py --concatenate -o concatenated.csv file1.csv file2.csv file3.csv 	# Concatenate the content of the files (file1.csv file2.csv file3.csv) and put it on concatenated.csv
+	python3 dataProcessor.py --concatenate --ignoreFirstLine -o concatenated.csv file1.csv file2.csv file3.csv 	# The same as before, but after the first file, disconsider the first line of each file
+
+
+Operations:
+	-c, --convert 			convert a xlsx file to csv
+	-C, --calculate 		calculate a csv file from another
+	-s, --summarize			summarize a csv file from another
+	-S, --select			select some columns of a csv file and put it on another
+	-t, --concatenate 		concatenate multiple files into an output file
+
+General parameters:
+	-i, --input=FILE		use input file
+	-o, --output=FILE		use output file
+
+Calculation parameters:
+	acceleration[ax,ay,az] 	calculate the acceleration using the column numbers [ax,ay,az] to extract the data
+
+Summarization parameters:
+	-n, --nlines=NUMBER		number of lines used for summarization. Default is 10.
+	mean 					calculate mean
+	median 					calculate median
+	stdev 					calculate standard deviation
+	mode					calculate mode
+
+Other options:
+	-h, --help				give this help list
+	-u, --usage				give a short usage message
+
+
+Report bugs to: fvvsantana@gmail.com
+pkg home page: <>
+General help using this software: <>
