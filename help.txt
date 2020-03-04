@@ -42,5 +42,5 @@ Other options:
 
 
 Report bugs to: fvvsantana@gmail.com
-pkg home page: <>
-General help using this software: <>
+pkg home page: <https://github.com/fvvsantana/dataPreProcessor>
+General help using this software: <https://github.com/fvvsantana/dataPreProcessor>
