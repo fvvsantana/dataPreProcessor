@@ -1,6 +1,6 @@
 # Data Pre-processor Script
 
-This code was made in my scientific initiation in order to pre-process data.
+This code was made in my undergraduate research project in order to pre-process data.
 The data were collected from the accelerometer sensor of an smartwatch and the goal was detecting what activity the user was doing.
 
 In the data set present in the 'data' folder, we have: timestamp of the collected measure (Timestamp), acceleration on the 3 axis (Ax, Ay, Az), modulus of the acceleration (Acc) and the executed activity (Activity). Among the activities, there were: going downstairs, upstairs, walking, sitting and standing.
